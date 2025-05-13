@@ -1,3 +1,4 @@
+from version.version import version
 # Proyecto : Control de inventario de un almacen
 # Autor: Manuel Sánchez Cárcamo
 """
@@ -20,6 +21,7 @@ Version MAJOR.MINOR.PATCH
 #   2025.04.29  : cambia paradigma de desarrollo y pasamos de prog. lineal a modular v2.0.0
 #                 primera funcio validar_numero
 #   2025.05.06  : Se reemplaza acciones repetidas por funciones v2.0.1
+#   2025.05.13  : Comienzo desarrollo modular. Creación de repositorio GitHub
 
 def valida_numero(mensaje="Valor : "):
     """
@@ -97,7 +99,6 @@ def fn_buscar_producto(productos, nom):
         return( -1 )
 
 #Programa Principal
-version = "v2.0.1"
 lnombre = ['Plumon', 'Borrador', 'Pizarra']
 lprecio = [1850.0, 3500.0, 13500.0]
 lstock = [20, 5, 10]
