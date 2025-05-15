@@ -1,73 +1,7 @@
 from version.version import version
+from Auxiliares.val_numero import valida_numero
 # Proyecto : Control de inventario de un almacen
 # Autor: Manuel Sánchez Cárcamo
-"""
-Un método de versionamiento del codigo es el sgte
-Version MAJOR.MINOR.PATCH
-
-1.- MAJOR: (version mayor) se incrementa cuando se hacen ca,bios grandes o
-        incompatibles con version anterior, p.e.: cambio a base de datos, 
-        integracion de nuevas funciones/capacidades
-    MINOR (version menor): Se incrementa cuando se agregan funcionalidades nuevas
-        pero sin romper la compatibilidad
-    PATCH (parche o revision): Se increment cuando se corrigen errores o se hacen 
-        mejoras. p.e.: Agregan validaciones a la lectura de datos.
-
-"""
-
-# Historial
-#   2025.04.17  : Inicio del proyecto (v1.0.0)
-#   2025.04.22  : Agrega primeras opciones 1,2 y 3 (v1.1.0)
-#   2025.04.29  : cambia paradigma de desarrollo y pasamos de prog. lineal a modular v2.0.0
-#                 primera funcio validar_numero
-#   2025.05.06  : Se reemplaza acciones repetidas por funciones v2.0.1
-#   2025.05.13  : Comienzo desarrollo modular. Creación de repositorio GitHub
-
-def valida_numero(mensaje="Valor : "):
-    """
-    valida_numero( parametro ): funcion que valida la elctura de un numero entero o flotante, 
-            retorna el valor leido, o repite la pregunta hasta qe el usuario ingrese un valor numérico.
-            El parametro de entrada es el mensaje a mostrar al preguntar por el nro.
-    """
-    validos = ["0","1","2","3","4","5","6","7","8","9","-","."]
-    repite = True
-    malochar = False  
-    num = ""
-    while repite:
-        num = input(mensaje)
-        largo = len ( num )
-        # valida caracteres
-        for i in range(largo):
-            if not num[i] in validos:
-                malochar = True
-        #valida numero de guiones
-        cont = 0
-        for i in range(largo):
-            if num[i] == "-":
-                cont = cont + 1
-        malog = cont > 1
-        contp = 0
-        for i in range(largo):
-            if num[i] == ".":
-                contp = contp + 1
-        malop = contp > 1
-        #valida posicion del guion
-        malopos = False
-        if cont == 1: #es decir, hay un guion
-            if num[0] != "-":
-                malopos = True # verdad que el guion está mal puesto 
-        if malochar or malog or malopos or malop:
-            repite = True
-            malochar = False  
-        else:
-            repite = False
-    if "." in num:
-        numero = float(num)
-    else:
-        numero = int(num)
-    return( num )
-    #valida_numero
-
 
 def fn_mostrar_producto(nombre, precio, cantidad):
     """

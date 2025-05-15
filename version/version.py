@@ -1,5 +1,5 @@
 """
-Un método de versionamiento del codigo es el sgte
+Un método de versionamiento del codigo es el siguente
 Version MAJOR.MINOR.PATCH
 
 1.- MAJOR: (version mayor) se incrementa cuando se hacen ca,bios grandes o
@@ -11,6 +11,7 @@ Version MAJOR.MINOR.PATCH
         mejoras. p.e.: Agregan validaciones a la lectura de datos.
 
 """
+
 # Historial
 #   2025.04.17  : Inicio del proyecto (v1.0.0)
 #   2025.04.22  : Agrega primeras opciones 1,2 y 3 (v1.1.0)
@@ -18,9 +19,4 @@ Version MAJOR.MINOR.PATCH
 #                 primera funcio validar_numero
 #   2025.05.06  : Se reemplaza acciones repetidas por funciones v2.0.1
 #   2025.05.13  : Comienzo desarrollo modular. Creación de repositorio GitHub
-
-
-#   version = "v1.0.0"
-#   version = "v2.0.0"
-#   version = "v2.1.1"
 version = "v2.1.2"
